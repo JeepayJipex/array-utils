@@ -1,1 +1,1 @@
-export default class Collection extends Array {}
+export default class Collection {}
