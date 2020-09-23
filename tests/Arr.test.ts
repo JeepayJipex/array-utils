@@ -47,6 +47,14 @@ describe('testing Arr class', () => {
             expect(Arr.set([1, 2, 3], 3, 1)).toStrictEqual([1,3,3])
             expect(Arr.set([1, 2, 3], 'test', 1)).toStrictEqual([1,'test',3])
         })
+        
+        it('should be able to unset value', () => {
+            expect(Arr.unset([1, 2, 3], 1)).toStrictEqual([1, 3])
+            expect(Arr.unset([1, 2, 3], 1, true)).toStrictEqual([1, null, 3])
+            expect(Arr.unset([1, 2, 3], 1, true, false)).toStrictEqual([1, undefined, 3])
+            expect(Arr.unset(['one', 'two', 'three'], 4)).toStrictEqual(['one', 'two', 'three'])
+            expect(Arr.unset(['one', 'two', 'three'], -1)).toStrictEqual(['one', 'two', 'three'])
+        })
 
     })
 }) 
