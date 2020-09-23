@@ -1,1 +1,1 @@
-"# JS Collections" 
+# JS Collections
