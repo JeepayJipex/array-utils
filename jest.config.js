@@ -1,4 +1,3 @@
-import path from 'path'
 export default {
     "roots": [
       "<rootDir>/tests"
@@ -11,6 +10,7 @@ export default {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "moduleNameMapper": {
-        "^@entity/(.*)$": "<rootDir>/src/entity/$1"
+        "^@entity/(.*)$": "<rootDir>/src/entity/$1",
+        "^@method/(.*)$": "<rootDir>/src/method/$1"
       }
   }
