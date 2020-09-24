@@ -1,5 +1,5 @@
 import { get } from '@method/get'
-import { getWhere } from '@method/get-where'
+import { getWhere, getWhereFirst, getWhereLast } from '@method/get-where'
 
 describe('testing values retrieval from array', () => {
   describe('testing get method', () => {
@@ -26,11 +26,25 @@ describe('testing values retrieval from array', () => {
   })
 
   describe('testing getWhere method', () => {
-    it('should be able to get normal type value', () => {
+    it('should be able to get elements that matches comparison', () => {
       expect(getWhere([1, 2, 3], '>', 2)).toStrictEqual([3])
       expect(getWhere([1, 2, 3], '<', 2)).toStrictEqual([1])
       expect(getWhere([1, 2, 3], '<=', 2)).toStrictEqual([1, 2])
       expect(getWhere([1, 2, 3], '>=', 2)).toStrictEqual([2, 3])
+    })
+
+    it('should be able to return first element that match comparison', () => {
+      expect(getWhereFirst([1, 2, 1, 3], '>', 2)).toBe(3)
+      expect(getWhereFirst([1, 2, 3, 2], '<', 2)).toBe(1)
+      expect(getWhereFirst([2, 1, 2, 3], '<=', 2)).toBe(2)
+      expect(getWhereFirst([1, 2, 3, 2, 3], '>=', 2)).toBe(2)
+    })
+
+    it('should be able to return last element that match comparison', () => {
+      expect(getWhereLast([3, 2, 1, 5, 3], '>', 2)).toBe(3)
+      expect(getWhereLast([0, 2, 3, 1], '<', 2)).toBe(1)
+      expect(getWhereLast([2, 1, 2, 3, 4, 2], '<=', 2)).toBe(2)
+      expect(getWhereLast([1, 2, 3, 2, 5, 2], '>=', 2)).toBe(2)
     })
   })
 })
