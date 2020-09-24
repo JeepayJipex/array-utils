@@ -1,4 +1,4 @@
-import { unset } from '@method/Arr/unset'
+import { unset } from '@method/unset'
 
 describe('testing removing values from array', () => {
   it('should be able to unset value', () => {

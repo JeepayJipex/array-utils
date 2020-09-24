@@ -1,4 +1,5 @@
-import { get } from '@method/Arr/get'
+import { get } from '@method/get'
+import { getWhere } from '@method/get-where'
 
 describe('testing values retrieval from array', () => {
   describe('testing get method', () => {
@@ -21,6 +22,15 @@ describe('testing values retrieval from array', () => {
       expect(get([], 125, 'returned')).toBe('returned')
       expect(get([0, 'first', true], 125, 'returned')).toBe('returned')
       expect(get([0, 'first', true], 1025, { value: 'test' })).toStrictEqual({ value: 'test' })
+    })
+  })
+
+  describe('testing getWhere method', () => {
+    it('should be able to get normal type value', () => {
+      expect(getWhere([1, 2, 3], '>', 2)).toStrictEqual([3])
+      expect(getWhere([1, 2, 3], '<', 2)).toStrictEqual([1])
+      expect(getWhere([1, 2, 3], '<=', 2)).toStrictEqual([1, 2])
+      expect(getWhere([1, 2, 3], '>=', 2)).toStrictEqual([2, 3])
     })
   })
 })
