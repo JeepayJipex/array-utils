@@ -3,6 +3,9 @@
 This repository contains simple methods to manipulate Arrays :
 - Setting or getting values (with or without conditions)
 - Delete values (with or without conditions)
+- Transform (in progress)
+- Merge multiple arrays (in progress)
+- Split arrays (in progress)
 
 ## Table of Contents
 
@@ -42,9 +45,11 @@ It means that they'll never mutate your arrays.
 They also doesn't attach any behavior to existing objects or types, avoiding unecessary consequences.
 
 ### Get methods
+... in progress
 ### Set methods
+... in progress
 ### Delete methods
-
+... in progress
 
 ## Maintainers
 
@@ -61,9 +66,13 @@ Feel free to contribute if you find any issue or have questions regarding this p
 ### Contribute as developer
 
 #### Fork and submit a Pull Request
+... in progress
+
 #### Testing and linting
+... in progress
 
 ### Contribute as support
+... in progress
 
 ## License
 [MIT](https://opensource.org/licenses/mit-license.php) © Jean Mariette
