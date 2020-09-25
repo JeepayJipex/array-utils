@@ -1,6 +1,6 @@
 import { append } from '@method/append'
 import { prepend } from '@method/prepend'
-import { set } from '@method/set'
+import { setAtIndex } from '@method/set'
 import { setWhere, setWhereFirst, setWhereLast } from '@method/set-where'
 
 describe('testing adding values to array', () => {
@@ -17,32 +17,32 @@ describe('testing adding values to array', () => {
   })
 
   it('should be able to set value at specified index', () => {
-    expect(set([1, 2, 3], 3, 1)).toStrictEqual([1, 3, 3])
-    expect(set([1, 2, 3], 'test', 4)).toStrictEqual([1, 2, 3, undefined, 'test'])
+    expect(setAtIndex([1, 2, 3], 3, 1)).toStrictEqual([1, 3, 3])
+    expect(setAtIndex([1, 2, 3], 'test', 4)).toStrictEqual([1, 2, 3, undefined, 'test'])
   })
 
   it('should replace value at index if needed', () => {
-    expect(set([1, 2, 3], 3, 1, false)).toStrictEqual([1, 2, 3])
-    expect(set([1, 2, 3], 3, 1)).toStrictEqual([1, 3, 3])
-    expect(set([1, 2, 3], 'test', 1)).toStrictEqual([1, 'test', 3])
+    expect(setAtIndex([1, 2, 3], 3, 1, false)).toStrictEqual([1, 2, 3])
+    expect(setAtIndex([1, 2, 3], 3, 1)).toStrictEqual([1, 3, 3])
+    expect(setAtIndex([1, 2, 3], 'test', 1)).toStrictEqual([1, 'test', 3])
   })
 })
 
 describe('testing adding value with optionnal context', () => {
   it('should be able to replace value where value equals argument', () => {
-    expect(setWhere([1, 2, 3], 2, 4)).toStrictEqual([1, 4, 3])
-    expect(setWhere([1, 'two', 'three'], 'two', 'four')).toStrictEqual([1, 'four', 'three'])
-    expect(setWhere([1, 2, 3, { a: 'b' }], { a: 'b' }, 1)).toStrictEqual([1, 2, 3, 1])
+    expect(setWhere([1, 2, 3], 2, '=', 4)).toStrictEqual([1, 4, 3])
+    expect(setWhere([1, 'two', 'three'], 'two', '=', 'four')).toStrictEqual([1, 'four', 'three'])
+    expect(setWhere([1, 2, 3, { a: 'b' }], { a: 'b' }, '=', 1)).toStrictEqual([1, 2, 3, 1])
   })
 
   it('should be able to replace only first occurence of value', () => {
-    expect(setWhereFirst([1, 'two', 'three', 'two'], 'two', 'four')).toStrictEqual([1, 'four', 'three', 'two'])
-    expect(setWhereFirst([1, 2, 'three', 4, 'three', 5], 'three', 'four')).toStrictEqual([1, 2, 'four', 4, 'three', 5])
-    expect(setWhereFirst([1, 2, 3, 4, 5, 6], 7, 'four')).toStrictEqual([1, 2, 3, 4, 5, 6])
+    expect(setWhereFirst([1, 'two', 'three', 'two'], 'two', '=', 'four')).toStrictEqual([1, 'four', 'three', 'two'])
+    expect(setWhereFirst([1, 2, 'three', 4, 'three', 5], 'three', '=', 'four')).toStrictEqual([1, 2, 'four', 4, 'three', 5])
+    expect(setWhereFirst([1, 2, 3, 4, 5, 6], 7, '=', 'four')).toStrictEqual([1, 2, 3, 4, 5, 6])
   })
 
   it('should be able to replace last occurence of value', () => {
-    expect(setWhereLast([1, 2, 3, 2, 3, 2], 2, 4)).toStrictEqual([1, 2, 3, 2, 3, 4])
-    expect(setWhereLast([1, 2, 3, 2, 3, 2], 2, 4)).toStrictEqual([1, 2, 3, 2, 3, 4])
+    expect(setWhereLast([1, 2, 3, 2, 3, 2], 2, '=', 4)).toStrictEqual([1, 2, 3, 2, 3, 4])
+    expect(setWhereLast([1, 2, 3, 2, 3, 2], 2, '=', 4)).toStrictEqual([1, 2, 3, 2, 3, 4])
   })
 })

@@ -1,4 +1,4 @@
-import { shallowCompare } from '@helpers/Object/shallowCompare'
+import { ComparisonOperators, operators } from '@helpers/Operators'
 
 /**
  * Search a value in the array and replace it
@@ -6,8 +6,8 @@ import { shallowCompare } from '@helpers/Object/shallowCompare'
  * @param search The value to be replaced
  * @param replacer The value to insert
  */
-export function setWhere<T, U> (arr: Array<T>, search: T, replacer: U): Array<T|U> {
-  return arr.map(value => shallowCompare(value, search) ? replacer : value)
+export function setWhere<T, U> (arr: Array<T>, search: T, operator: ComparisonOperators, replacer: U): Array<T|U> {
+  return arr.map(value => operators[operator](value, search) ? replacer : value)
 }
 
 /**
@@ -16,8 +16,8 @@ export function setWhere<T, U> (arr: Array<T>, search: T, replacer: U): Array<T|
  * @param search The value to be replaced
  * @param replacer The value to insert
  */
-export function setWhereFirst<T, U> (arr: Array<T>, search: T, replacer: U): Array<T|U> {
-  const index = arr.findIndex(value => shallowCompare(value, search))
+export function setWhereFirst<T, U> (arr: Array<T>, search: T, operator: ComparisonOperators, replacer: U): Array<T|U> {
+  const index = arr.findIndex(value => operators[operator](value, search))
   if (index === -1) {
     return arr
   }
@@ -30,8 +30,8 @@ export function setWhereFirst<T, U> (arr: Array<T>, search: T, replacer: U): Arr
  * @param search The value to be replaced
  * @param replacer The value to insert
  */
-export function setWhereLast<T, U> (arr: Array<T>, search: T, replacer: U): Array<T|U> {
-  const index = arr.reverse().findIndex(value => shallowCompare(value, search))
+export function setWhereLast<T, U> (arr: Array<T>, search: T, operator: ComparisonOperators, replacer: U): Array<T|U> {
+  const index = arr.reverse().findIndex(value => operators[operator](value, search))
   if (index === -1) {
     return arr
   }
