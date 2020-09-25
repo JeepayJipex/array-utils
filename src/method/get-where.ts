@@ -1,4 +1,5 @@
-import { operators, ComparisonOperators } from '@helpers/Operators'
+import { operators } from '@helpers/Operators'
+import { ComparisonOperators } from '@custom-types/comparison-operators'
 
 /**
  * Retrieve elements that matches comparison in the given array

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   roots: [
     '<rootDir>/tests'
   ],
@@ -10,7 +10,8 @@ export default {
     '^.+\\.(ts|tsx)$': 'ts-jest'
   },
   moduleNameMapper: {
-    '^@entity/(.*)$': '<rootDir>/src/entity/$1',
+    '^@custom-types/(.*)$': '<rootDir>/src/custom-types/$1',
+    '^@interfaces/(.*)$': '<rootDir>/src/interfaces/$1',
     '^@method/(.*)$': '<rootDir>/src/method/$1',
     '^@helpers/(.*)$': '<rootDir>/src/helpers/$1'
   }
