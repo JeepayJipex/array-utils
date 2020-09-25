@@ -1,8 +1,8 @@
 {
-  "name": "collections",
-  "version": "1.0.0",
+  "name": "array-utils",
+  "version": "0.0.1",
   "main": "index.js",
-  "repository": "https://github.com/JeepayJipex/js-collections.git",
+  "repository": "https://github.com/JeepayJipex/array-utils.git",
   "author": "Jean Mariette <jmariette@rampar.com>",
   "license": "MIT",
   "scripts": {
