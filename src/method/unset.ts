@@ -1,7 +1,4 @@
-export interface unsetOptions {
-    preserveIndexes?: boolean
-    returnNull?: boolean
-}
+import { unsetOptions } from '@interfaces/unset-options'
 
 /**
  * Remove value at specified index. If specified, can preserve indexes and replace de value by either null or undefined

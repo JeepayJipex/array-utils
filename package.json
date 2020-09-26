@@ -6,7 +6,7 @@
   "author": "Jean Mariette <jmariette@rampar.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./build",
+    "build": "tsc --project tsconfig.build.json && tscpaths -p tsconfig.json -s ./ -o ./build",
     "test": "jest",
     "lint": "eslint . --ext .ts"
   },
