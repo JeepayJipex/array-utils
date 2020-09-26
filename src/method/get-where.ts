@@ -1,5 +1,5 @@
 import { operators } from '@helpers/Operators'
-import { ComparisonOperators } from '@custom-types/comparison-operators'
+import { ComparisonOperators as ComparisonOperator } from '@custom-types/comparison-operators'
 
 /**
  * Retrieve elements that matches comparison in the given array
@@ -7,7 +7,7 @@ import { ComparisonOperators } from '@custom-types/comparison-operators'
  * @param operator the comparison operator to use
  * @param value the value to compare with
  */
-export function getWhere<T, U> (arr: Array<T>, operator: ComparisonOperators, value: U): Array<T|U> {
+export function getWhere<T, U> (arr: Array<T>, operator: ComparisonOperator, value: U): Array<T|U> {
   return arr.filter(item => operators[operator](item, value))
 }
 
@@ -17,7 +17,7 @@ export function getWhere<T, U> (arr: Array<T>, operator: ComparisonOperators, va
  * @param operator the comparison operator to use
  * @param value the value to compare with
  */
-export function getWhereFirst<T, U> (arr: Array<T>, operator: ComparisonOperators, value: U): T|U|undefined {
+export function getWhereFirst<T, U> (arr: Array<T>, operator: ComparisonOperator, value: U): T|U|undefined {
   return arr.find(item => operators[operator](item, value))
 }
 
@@ -27,6 +27,6 @@ export function getWhereFirst<T, U> (arr: Array<T>, operator: ComparisonOperator
  * @param operator the comparison operator to use
  * @param value the value to compare with
  */
-export function getWhereLast<T, U> (arr: Array<T>, operator: ComparisonOperators, value: U): T|U|undefined {
+export function getWhereLast<T, U> (arr: Array<T>, operator: ComparisonOperator, value: U): T|U|undefined {
   return arr.reverse().find(item => operators[operator](item, value))
 }
