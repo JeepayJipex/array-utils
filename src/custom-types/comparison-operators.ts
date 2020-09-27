@@ -1,1 +1,1 @@
-export type ComparisonOperators = '<'|'<='|'>'|'>='|'like'|'ilike'|'='
+export type ComparisonOperators = '<'|'<='|'>'|'>='|'like'|'ilike'|'='|'isBasicType'

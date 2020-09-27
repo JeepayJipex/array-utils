@@ -51,4 +51,14 @@ describe('testing operator helpers', () => {
     expect(operators.ilike('AbCde', 'f')).toBe(false)
     expect(operators.ilike('ABcdE', 'aBdCe')).toBe(false)
   })
+
+  it('should be able to return if is of a basic type', () => {
+    expect(operators.isBasicType('a little string', 'string')).toBe(true)
+    expect(operators.isBasicType(false, 'boolean')).toBe(true)
+    expect(operators.isBasicType(1254, 'number')).toBe(true)
+    expect(operators.isBasicType(1254, 'string')).toBe(false)
+    expect(operators.isBasicType('a little string', 'object')).toBe(false)
+    expect(operators.isBasicType({ a: 1 }, 'object')).toBe(true)
+    expect(operators.isBasicType(() => 1, 'function')).toBe(true)
+  })
 })
