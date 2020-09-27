@@ -1,4 +1,4 @@
-import { getKeysWhere, getKeyWhereFirst, getKeyWhereLast } from '@method/get-keys'
+import { getKeysWhere, getKeyWhereFirst, getKeyWhereLast } from '@method/retrieve/get-keys'
 
 describe('testing get keys where methods', () => {
   it('should be able to retrieve all keys corresponding', () => {

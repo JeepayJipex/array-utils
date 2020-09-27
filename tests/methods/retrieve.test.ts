@@ -1,5 +1,5 @@
-import { getAtIndex } from '@method/get'
-import { getWhere, getWhereFirst, getWhereLast } from '@method/get-where'
+import { getAtIndex } from '@method/retrieve/get'
+import { getWhere, getWhereFirst, getWhereLast } from '@method/retrieve/get-where'
 
 describe('testing values retrieval from array', () => {
   describe('testing get method', () => {
