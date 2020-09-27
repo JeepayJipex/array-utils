@@ -1,4 +1,5 @@
 import { BasicTypes } from '@custom-types/basic-types'
+import { Newable } from '@custom-types/newable'
 import { shallowCompare } from '@helpers/Object/shallowCompare'
 import { OperatorFunctions } from '@interfaces/operator-functions'
 
@@ -12,5 +13,6 @@ export const operators: OperatorFunctions = {
   like: (charSequence: string, search: string): boolean => charSequence.includes(search),
   ilike: (charSequence: string, search: string): boolean => charSequence.toLowerCase().includes(search.toLowerCase()),
   '=': (item: any, search: any): boolean => shallowCompare(item, search),
-  isBasicType: (item: any, type: BasicTypes) => typeof item === type
+  isBasicType: (item: any, type: BasicTypes) => typeof item === type,
+  isInstanceOf: <T>(item: any, constructorFunction: Newable<T>) => item instanceof constructorFunction
 }
