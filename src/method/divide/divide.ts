@@ -20,6 +20,13 @@ export function divideAtIndex<T> (arr: Array<T>, index: number): Array<Array<T>>
   return [left, right]
 }
 
+/**
+ * Divides at indexes and return multiple arrays
+ * @template T Types present in passed array
+ * @param arr Array to search in
+ * @param indexes indexes at which should start a new array
+ * @returns Arrays containing the divided values
+ */
 export function divideAtIndexes<T> (arr: Array<T>, indexes: Array<number>): Array<Array<T>> {
   let returnArray: Array<Array<T>> = []
   indexes = Array
