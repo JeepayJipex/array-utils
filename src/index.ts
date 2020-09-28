@@ -1,0 +1,5 @@
+export * as create from '@method/create'
+export * as unset from '@method/delete'
+export * as divide from '@method/divide'
+export * as retrieve from '@method/retrieve'
+export * as store from '@method/store'

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { BasicTypes } from '@custom-types/basic-types'
-import { Newable } from '@custom-types/newable';
+import { Newable } from '@custom-types/newable'
 
 export interface OperatorFunctions {
     '>': (greater: any, lesser: any) => boolean
