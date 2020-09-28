@@ -1,5 +1,8 @@
 # Array Utils
 
+## Warning : alpha version
+this repository is still in alpha. It means that it's API can change from one version to another. Use it at your own risk
+
 This repository contains simple methods to manipulate Arrays :
 - Setting or getting values (with or without conditions)
 - Delete values (with or without conditions)
