@@ -1,7 +1,7 @@
-import { append } from '@method/append'
-import { prepend } from '@method/prepend'
-import { setAtIndex } from '@method/set'
-import { setWhere, setWhereFirst, setWhereLast } from '@method/set-where'
+import { append } from '@method/store/append'
+import { prepend } from '@method/store/prepend'
+import { setAtIndex } from '@method/store/set'
+import { setWhere, setWhereFirst, setWhereLast } from '@method/store/set-where'
 
 describe('testing adding values to array', () => {
   it('should be able to append values to the end of array', () => {

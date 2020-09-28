@@ -1,5 +1,8 @@
 import { operators } from '@helpers/Operators'
 
+class C {}
+class D {}
+
 describe('testing operator helpers', () => {
   it('should be able to return if its lesser than', () => {
     expect(operators['<'](1, 5)).toBe(true)
@@ -50,5 +53,22 @@ describe('testing operator helpers', () => {
     expect(operators.ilike('ABcdE', 'aBcDe')).toBe(true)
     expect(operators.ilike('AbCde', 'f')).toBe(false)
     expect(operators.ilike('ABcdE', 'aBdCe')).toBe(false)
+  })
+
+  it('should be able to return if is of a basic type', () => {
+    expect(operators.isBasicType('a little string', 'string')).toBe(true)
+    expect(operators.isBasicType(false, 'boolean')).toBe(true)
+    expect(operators.isBasicType(1254, 'number')).toBe(true)
+    expect(operators.isBasicType(1254, 'string')).toBe(false)
+    expect(operators.isBasicType('a little string', 'object')).toBe(false)
+    expect(operators.isBasicType({ a: 1 }, 'object')).toBe(true)
+    expect(operators.isBasicType(() => 1, 'function')).toBe(true)
+    expect(operators.isBasicType(Date, 'function')).toBe(true)
+  })
+
+  it('should be able to return if item is instance of', () => {
+    expect(operators.isInstanceOf(new Date(), Date)).toBe(true)
+    expect(operators.isInstanceOf(new C(), C)).toBe(true)
+    expect(operators.isInstanceOf(new C(), D)).toBe(false)
   })
 })

@@ -1,4 +1,5 @@
-import { ComparisonOperators, operators } from '@helpers/Operators'
+import { ComparisonOperators } from '@custom-types/comparison-operators'
+import { operators } from '@helpers/Operators'
 
 /**
  * Search a value in the array and replace it

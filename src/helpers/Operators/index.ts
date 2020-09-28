@@ -1,17 +1,9 @@
+import { BasicTypes } from '@custom-types/basic-types'
+import { Newable } from '@custom-types/newable'
 import { shallowCompare } from '@helpers/Object/shallowCompare'
+import { OperatorFunctions } from '@interfaces/operator-functions'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type ComparisonOperators = '<'|'<='|'>'|'>='|'like'|'ilike'|'='
-
-export interface OperatorFunctions {
-    '>': (greater: any, lesser: any) => boolean
-    '>=': (greater: any, lesser: any) => boolean
-    '<': (lesser: any, greater: any) => boolean
-    '<=': (lesser: any, greater: any) => boolean
-    'like': (charSequence: any, search: any) => boolean
-    'ilike': (charSequence: any, search: any) => boolean
-    '=': (item: any, search: any) => boolean
-}
 
 export const operators: OperatorFunctions = {
   '>': (greater: string|number, lesser: string|number): boolean => greater > lesser,
@@ -20,5 +12,7 @@ export const operators: OperatorFunctions = {
   '<=': (lesser: string|number, greater: string|number): boolean => lesser <= greater,
   like: (charSequence: string, search: string): boolean => charSequence.includes(search),
   ilike: (charSequence: string, search: string): boolean => charSequence.toLowerCase().includes(search.toLowerCase()),
-  '=': (item: any, search: any): boolean => shallowCompare(item, search)
+  '=': (item: any, search: any): boolean => shallowCompare(item, search),
+  isBasicType: (item: any, type: BasicTypes) => typeof item === type,
+  isInstanceOf: <T>(item: any, constructorFunction: Newable<T>) => item instanceof constructorFunction
 }
