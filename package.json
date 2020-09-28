@@ -1,8 +1,8 @@
 {
   "name": "@jeepayjipex/array-utils",
-  "version": "0.0.2",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "version": "0.0.3",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "repository": "https://github.com/JeepayJipex/array-utils.git",
   "author": "Jean Mariette <jmariette@rampar.com>",
   "keywords": ["javascript", "Typescript", "array", "array-methods", "array-manipulations"],

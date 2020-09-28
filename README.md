@@ -27,11 +27,11 @@ You need to have node >12 installed with npm (or yarn).
 In your project folder (where is located your packages.json file) type:
 
 ```shell
-npm install Jeepayjipex/array-utils
+npm install @jeepayjipex/array-utils
 ```
 or
 ```shell
-yarn add Jeepayjipex/array-utils
+yarn add @jeepayjipex/array-utils
 ```
 
 
